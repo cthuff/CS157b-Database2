@@ -1,0 +1,18 @@
+c SuperGrid -5 5 3 0 10 3 100
+c BestGridEver 0 5 5 2 8 5 100
+i SuperGrid IAmHere -3 6
+i SuperGrid P0 4 0
+i SuperGrid P1 4 1
+i SuperGrid P2 4 2
+i SuperGrid AnotherP2 4 2
+i SuperGrid P3 4 3
+i SuperGrid P4 4 4
+i SuperGrid P6 4 5
+i SuperGrid P7 4 6
+i SuperGrid P8 4 7
+i SuperGrid P9 4 8
+i SuperGrid P10 4 9
+i SuperGrid P11 4 10
+i BestGridEver BestPointEver 4 6
+l SuperGrid 1 1 7 7 2 3
+l BestGridEver 1 1 7 7 0 10
