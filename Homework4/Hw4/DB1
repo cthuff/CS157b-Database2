@@ -1,0 +1,458 @@
+sqlite> CREATE TABLE foo (col0 INT);
+sqlite> INSTER INTO foo (col0) VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9)
+   ...> ;
+Error: near "INSTER": syntax error
+sqlite> INSERT INTO foo (col0) VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9);
+sqlite> PRAGMA journal_mode=delete;
+memory
+sqlite> .cd /
+/.DocumentRevisions-V100                 /.PKInstallSandboxManager-SystemSoftware /Heroes IV                               /sbin                                   
+/.DocumentRevisions-V100 (from old Mac)  /.Spotlight-V100                         /home                                    /System                                 
+/.DS_Store                               /.vol                                    /installer.failurerequests               /tmp                                    
+/.file                                   /Applications                            /Library                                 /User Guides And Information            
+/.fseventsd                              /bin                                     /net                                     /Users                                  
+           /cores                                   /Network                                 /usr                                    
+/.OSInstallerMessages (from old Mac)     /dev                                     /opt                                     /var                                    
+/.PKInstallSandboxManager                /etc                                     /private                                 /Volumes                                
+sqlite> .cd 
+.499481.padl                 .cisco                       .emacs~                      .local                       .sage                        .viminfo                     Movies                      
+.activator                   .cocoapods                   .emulator_console_auth_token .m2                          .sbt                         .vscode                      Music                       
+.adobe                       .config                      .fontconfig                  .mono                        .scalaide                    .Xauthority                  OneDrive                    
+.android                     .cups                        .gitconfig                   .mysql_history               .ServiceHub                  Applications                 PhpstormProjects            
+.anyconnect                  .dotnet                      .gradle                      .nbprofiler                  .ssh                         Creative Cloud Files         Pictures                    
+.atom                        .dropbox                     .IdentityService             .nuget                       .subversion                  CS151_Fall2016               Public                      
+.bash_history                .DS_Store                    .idlerc                      .openvr                      .swipl-dir-history           Desktop                      Sites                       
+.bash_profile                .dvdcss                      .imagineer_log.txt           .oracle_jre_usage            .templateengine              Documents                    WebstormProjects            
+.bash_sessions               .eclipse                     .ivy2                        .p2                          .tooling                     Downloads                   
+.cache                       .emacs                       .lesshst                     .phet                        .transifexrc                 From USB                    
+.CFUserTextEncoding          .emacs.d                     .lldb                        .python_history              .Trash                       Library                     
+sqlite> .cd Desktop 
+sqlite> .cd 
+.classpath                       .project                         CS Books                         PDFs                             Senior Spring 2018              
+.DS_Store                        .xprtbtreecache5A                Have No Fear Dreidel Boy is Here Recipes                          Stuff                           
+.idea                            App Development                  iWeb: Photoshop Stuff            San José State                 sweet internal release.pages    
+.localized                       Craig's Folder                   Movies                           School Archives                  Worms 3D                        
+sqlite> .help
+.auth ON|OFF           Show authorizer callbacks
+.backup ?DB? FILE      Backup DB (default "main") to FILE
+.bail on|off           Stop after hitting an error.  Default OFF
+.binary on|off         Turn binary output on or off.  Default OFF
+.cd DIRECTORY          Change the working directory to DIRECTORY
+.changes on|off        Show number of rows changed by SQL
+.check GLOB            Fail if output since .testcase does not match
+.clone NEWDB           Clone data into NEWDB from the existing database
+.databases             List names and files of attached databases
+.dbinfo ?DB?           Show status information about the database
+.dump ?TABLE? ...      Dump the database in an SQL text format
+                         If TABLE specified, only dump tables matching
+                         LIKE pattern TABLE.
+.echo on|off           Turn command echo on or off
+.eqp on|off|full       Enable or disable automatic EXPLAIN QUERY PLAN
+.exit                  Exit this program
+.explain ?on|off|auto? Turn EXPLAIN output mode on or off or to automatic
+.fullschema ?--indent? Show schema and the content of sqlite_stat tables
+.headers on|off        Turn display of headers on or off
+.help                  Show this message
+.import FILE TABLE     Import data from FILE into TABLE
+.imposter INDEX TABLE  Create imposter table TABLE on index INDEX
+.indexes ?TABLE?       Show names of all indexes
+                         If TABLE specified, only show indexes for tables
+                         matching LIKE pattern TABLE.
+.limit ?LIMIT? ?VAL?   Display or change the value of an SQLITE_LIMIT
+.lint OPTIONS          Report potential schema issues. Options:
+                         fkey-indexes     Find missing foreign key indexes
+.log FILE|off          Turn logging on or off.  FILE can be stderr/stdout
+.mode MODE ?TABLE?     Set output mode where MODE is one of:
+                         ascii    Columns/rows delimited by 0x1F and 0x1E
+                         csv      Comma-separated values
+                         column   Left-aligned columns.  (See .width)
+                         html     HTML <table> code
+                         insert   SQL insert statements for TABLE
+                         line     One value per line
+                         list     Values delimited by "|"
+                         quote    Escape answers as for SQL
+                         tabs     Tab-separated values
+                         tcl      TCL list elements
+.nullvalue STRING      Use STRING in place of NULL values
+.once FILENAME         Output for the next SQL command only to FILENAME
+.open ?OPTIONS? ?FILE? Close existing database and reopen FILE
+                         The --new option starts with an empty file
+.output ?FILENAME?     Send output to FILENAME or stdout
+.print STRING...       Print literal STRING
+.prompt MAIN CONTINUE  Replace the standard prompts
+.quit                  Exit this program
+.read FILENAME         Execute SQL in FILENAME
+.restore ?DB? FILE     Restore content of DB (default "main") from FILE
+.save FILE             Write in-memory database into FILE
+.scanstats on|off      Turn sqlite3_stmt_scanstatus() metrics on or off
+.schema ?PATTERN?      Show the CREATE statements matching PATTERN
+                          Add --indent for pretty-printing
+.selftest ?--init?     Run tests defined in the SELFTEST table
+.separator COL ?ROW?   Change the column separator and optionally the row
+                         separator for both the output mode and .import
+.session CMD ...       Create or control sessions
+.sha3sum ?OPTIONS...?  Compute a SHA3 hash of database content
+.shell CMD ARGS...     Run CMD ARGS... in a system shell
+.show                  Show the current values for various settings
+.stats ?on|off?        Show stats or turn stats on or off
+.system CMD ARGS...    Run CMD ARGS... in a system shell
+.tables ?TABLE?        List names of tables
+                         If TABLE specified, only list tables matching
+                         LIKE pattern TABLE.
+.testcase NAME         Begin redirecting output to 'testcase-out.txt'
+.timeout MS            Try opening locked tables for MS milliseconds
+.timer on|off          Turn SQL timer on or off
+.trace FILE|off        Output each SQL statement as it is run
+.vfsinfo ?AUX?         Information about the top-level VFS
+.vfslist               List all available VFSes
+.vfsname ?AUX?         Print the name of the VFS stack
+.width NUM1 NUM2 ...   Set column widths for "column" mode
+                         Negative values right-justify
+sqlite> .database
+main: 
+sqlite> .dbinfo
+sqlite> .dbinfo main
+sqlite> cd ..
+   ...> ;
+Error: near "cd": syntax error
+sqlite> .cd ..
+sqlite> cd 
+.499481.padl                 .cisco                       .emacs~                      .local                       .sage                        .viminfo                     Movies                      
+.activator                   .cocoapods                   .emulator_console_auth_token .m2                          .sbt                         .vscode                      Music                       
+.adobe                       .config                      .fontconfig                  .mono                        .scalaide                    .Xauthority                  OneDrive                    
+.android                     .cups                        .gitconfig                   .mysql_history               .ServiceHub                  Applications                 PhpstormProjects            
+.anyconnect                  .dotnet                      .gradle                      .nbprofiler                  .ssh                         Creative Cloud Files         Pictures                    
+.atom                        .dropbox                     .IdentityService             .nuget                       .subversion                  CS151_Fall2016               Public                      
+.bash_history                .DS_Store                    .idlerc                      .openvr                      .swipl-dir-history           Desktop                      Sites                       
+.bash_profile                .dvdcss                      .imagineer_log.txt           .oracle_jre_usage            .templateengine              Documents                    WebstormProjects            
+.bash_sessions               .eclipse                     .ivy2                        .p2                          .tooling                     Downloads                   
+.cache                       .emacs                       .lesshst                     .phet                        .transifexrc                 From USB                    
+.CFUserTextEncoding          .emacs.d                     .lldb                        .python_history              .Trash                       Library                     
+sqlite> .database
+main: 
+sqlite> .tables
+foo
+sqlite> .cd Desktop 
+sqlite> exit
+   ...> ;
+Error: near "exit": syntax error
+sqlite> quit
+   ...> ;
+Error: near "quit": syntax error
+sqlite> .quit
+craigery:~ craig$ cd Desktop/
+craigery:Desktop craig$ sqlite3 DB1.sqlite
+SQLite version 3.19.3 2017-06-27 16:48:08
+Enter ".help" for usage hints.
+sqlite> .database
+main: /Users/craig/Desktop/DB1.sqlite
+sqlite> CREATE TABLE foo (col0 INT);
+sqlite> INSERT INTO foo (col0) VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9);
+sqlite> PRAGMA journal_mode=delete;
+delete
+sqlite> .clone DB2.sqlite
+foo... done
+sqlite> BEGIN TRANSACTION
+   ...> DELETE * FROM foo; 
+Error: near "DELETE": syntax error
+sqlite> BEGIN TRANSACTION;
+sqlite> DELETE * FROM foo;
+Error: near "*": syntax error
+sqlite> DELETE FROM foo WHERE *
+   ...> ;
+Error: near "*": syntax error
+sqlite> DELETE FROM foo *
+   ...> ;
+Error: near "*": syntax error
+sqlite> DELETE FROM foo WHERE col0 > -1
+   ...> ;
+sqlite> SELECT * FROM foo
+   ...> ;
+sqlite> .read DB1.sqlite
+Error: near line 1: near "SQLite": syntax error
+sqlite> .read DB1
+Error: cannot open "DB1"
+sqlite> .help
+.auth ON|OFF           Show authorizer callbacks
+.backup ?DB? FILE      Backup DB (default "main") to FILE
+.bail on|off           Stop after hitting an error.  Default OFF
+.binary on|off         Turn binary output on or off.  Default OFF
+.cd DIRECTORY          Change the working directory to DIRECTORY
+.changes on|off        Show number of rows changed by SQL
+.check GLOB            Fail if output since .testcase does not match
+.clone NEWDB           Clone data into NEWDB from the existing database
+.databases             List names and files of attached databases
+.dbinfo ?DB?           Show status information about the database
+.dump ?TABLE? ...      Dump the database in an SQL text format
+                         If TABLE specified, only dump tables matching
+                         LIKE pattern TABLE.
+.echo on|off           Turn command echo on or off
+.eqp on|off|full       Enable or disable automatic EXPLAIN QUERY PLAN
+.exit                  Exit this program
+.explain ?on|off|auto? Turn EXPLAIN output mode on or off or to automatic
+.fullschema ?--indent? Show schema and the content of sqlite_stat tables
+.headers on|off        Turn display of headers on or off
+.help                  Show this message
+.import FILE TABLE     Import data from FILE into TABLE
+.imposter INDEX TABLE  Create imposter table TABLE on index INDEX
+.indexes ?TABLE?       Show names of all indexes
+                         If TABLE specified, only show indexes for tables
+                         matching LIKE pattern TABLE.
+.limit ?LIMIT? ?VAL?   Display or change the value of an SQLITE_LIMIT
+.lint OPTIONS          Report potential schema issues. Options:
+                         fkey-indexes     Find missing foreign key indexes
+.log FILE|off          Turn logging on or off.  FILE can be stderr/stdout
+.mode MODE ?TABLE?     Set output mode where MODE is one of:
+                         ascii    Columns/rows delimited by 0x1F and 0x1E
+                         csv      Comma-separated values
+                         column   Left-aligned columns.  (See .width)
+                         html     HTML <table> code
+                         insert   SQL insert statements for TABLE
+                         line     One value per line
+                         list     Values delimited by "|"
+                         quote    Escape answers as for SQL
+                         tabs     Tab-separated values
+                         tcl      TCL list elements
+.nullvalue STRING      Use STRING in place of NULL values
+.once FILENAME         Output for the next SQL command only to FILENAME
+.open ?OPTIONS? ?FILE? Close existing database and reopen FILE
+                         The --new option starts with an empty file
+.output ?FILENAME?     Send output to FILENAME or stdout
+.print STRING...       Print literal STRING
+.prompt MAIN CONTINUE  Replace the standard prompts
+.quit                  Exit this program
+.read FILENAME         Execute SQL in FILENAME
+.restore ?DB? FILE     Restore content of DB (default "main") from FILE
+.save FILE             Write in-memory database into FILE
+.scanstats on|off      Turn sqlite3_stmt_scanstatus() metrics on or off
+.schema ?PATTERN?      Show the CREATE statements matching PATTERN
+                          Add --indent for pretty-printing
+.selftest ?--init?     Run tests defined in the SELFTEST table
+.separator COL ?ROW?   Change the column separator and optionally the row
+                         separator for both the output mode and .import
+.session CMD ...       Create or control sessions
+.sha3sum ?OPTIONS...?  Compute a SHA3 hash of database content
+.shell CMD ARGS...     Run CMD ARGS... in a system shell
+.show                  Show the current values for various settings
+.stats ?on|off?        Show stats or turn stats on or off
+.system CMD ARGS...    Run CMD ARGS... in a system shell
+.tables ?TABLE?        List names of tables
+                         If TABLE specified, only list tables matching
+                         LIKE pattern TABLE.
+.testcase NAME         Begin redirecting output to 'testcase-out.txt'
+.timeout MS            Try opening locked tables for MS milliseconds
+.timer on|off          Turn SQL timer on or off
+.trace FILE|off        Output each SQL statement as it is run
+.vfsinfo ?AUX?         Information about the top-level VFS
+.vfslist               List all available VFSes
+.vfsname ?AUX?         Print the name of the VFS stack
+.width NUM1 NUM2 ...   Set column widths for "column" mode
+                         Negative values right-justify
+sqlite> .save DB1.txt
+Error: database is locked
+sqlite> .unlock
+Error: unknown command or invalid arguments:  "unlock". Enter ".help" for help
+sqlite> END TRANSACTION
+   ...> ;
+sqlite> .unlock
+Error: unknown command or invalid arguments:  "unlock". Enter ".help" for help
+sqlite> .save DB1.txt
+sqlite> DROP TABLE foo
+   ...> ;
+sqlite> .backup test.txt
+sqlite> .read DB1.sqlite
+Error: near line 1: near "SQLite": syntax error
+sqlite> .read DB1
+Error: cannot open "DB1"
+sqlite> .open DB2.sqlite
+sqlite> .tables
+foo
+sqlite> SELECT * FROM foo
+   ...> ;
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+sqlite> .backup test.txt
+sqlite> .quit
+craigery:Desktop craig$ sqlite3 DB1.sqlite
+SQLite version 3.19.3 2017-06-27 16:48:08
+Enter ".help" for usage hints.
+sqlite> CREATE TABLE foo (col0 INT);
+sqlite> INSERT INTO foo (col0) VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9)
+   ...> L
+   ...> ;
+Error: near "L": syntax error
+sqlite> INSERT INTO foo (col0) VALUES (0),(1),(2),(3),(4),(5),(6),(7),(8),(9);
+sqlite> .clone DB2.sqlite
+foo... done
+sqlite> PRAGMA journal_mode=delete;
+delete
+sqlite> BEGIN TRANSACTION;
+sqlite> DELETE FROM foo WHERE col0 > -1;
+sqlite> .clone DBClone.sqlite
+foo... done
+sqlite> END TRANSACTION;
+sqlite> INSERT INTO foo (col0) VALUES (10)
+   ...> ;
+sqlite> INSTER INTO foo (col0) VALUES(10123)
+   ...> ;
+Error: near "INSTER": syntax error
+sqlite> INSTERT INTO foo (col0) VALUES(10123)
+   ...> ;
+Error: near "INSTERT": syntax error
+sqlite> INSERT INTO foo (col0) VALUES(10123);
+sqlite> INSTER INTO foo (col0) VALUES (123);
+Error: near "INSTER": syntax error
+sqlite> INSERT INTO foo (col0) VALUES (123);
+sqlite> .databases
+main: /Users/craig/Desktop/DB1.sqlite
+sqlite> DELETE FROM foo WHERE col0 > -1
+   ...> ;
+sqlite> COmmit
+   ...> ;
+Error: cannot commit - no transaction is active
+sqlite> BEGIN TRANSACTION
+   ...> ;
+sqlite> END TRANSACTION;
+sqlite> BEGIN TRANSACTION;
+sqlite> INSERT INTO foo 123
+   ...> ;
+Error: near "123": syntax error
+sqlite> INSERT INTO foo VALUE 123
+   ...> ;
+Error: near "VALUE": syntax error
+sqlite> INSERT INTO foo VALUES 123;
+Error: near "123": syntax error
+sqlite> INSERT INTO foo VALUES (123);
+sqlite> REMOVE FROM foo WHERE col0 = 123
+   ...> ;
+Error: near "REMOVE": syntax error
+sqlite> DELETE FROM foo WHERE col0 = 123
+   ...> ;
+sqlite> END TRANSACTION;
+sqlite> BEGIN TRANSACTION;
+sqlite> INSTERT INTO foo VALUES (125);
+Error: near "INSTERT": syntax error
+sqlite> INSERT INTO foo VALUES (125);
+sqlite> INSERT INTO foo VALUES (1120);
+sqlite> INSERT INTO foo VALUES (1121);
+sqlite> INSTER INTO foo VALUES (1),(2),(3),(123142124413);
+Error: near "INSTER": syntax error
+sqlite> INSERT INTO foo VALUES (1),(2),(3),(123142124413);
+sqlite> DELETE FROM foo WHERE col0 = 1;
+sqlite> DELETE FROM foo WHERE col0 = 2;
+sqlite> DELETE FROM foo WHERE col0 = 3;
+sqlite> DELETE FROM foo WHERE col0 = 125;
+sqlite> DELETE FROM foo WHERE col0 = 1120;
+sqlite> DELETE FROM foo WHERE col0 = 1121;
+sqlite> DELETE FROM foo WHERE col0 = 123142124413;
+sqlite> END TRANSACTION;
+sqlite> BEGIN TRANSACTION;
+sqlite> INSTER INTO foo VALUES (1);
+Error: near "INSTER": syntax error
+sqlite> INSERT INTO foo VALUES (1);
+sqlite> END TRANSACTION;
+sqlite> BEGIN TRANSACTION;
+sqlite> REMOVE FROM foo WHERE col0 < 0;
+Error: near "REMOVE": syntax error
+sqlite> DELETE FROM foo WHERE col0 < 0;
+sqlite> END TRANSACTION;
+sqlite> INSERT INTO foo VALUES (1);
+sqlite> INSERT INTO foo VALUES (2);
+sqlite> INSERT INTO foo VALUES (3);
+sqlite> INSERT INTO foo VALUES (4);
+sqlite> INSERT INTO foo VALUES (5);
+sqlite> INSERT INTO foo VALUES (6);
+sqlite> INSERT INTO foo VALUES (7);
+sqlite> INSERT INTO foo VALUES (8);
+sqlite> INSERT INTO foo VALUES (9);
+sqlite> INSERT INTO foo VALUES (10);
+sqlite> INSERT INTO foo VALUES (11);
+sqlite> INSERT INTO foo VALUES (12);
+sqlite> INSERT INTO foo VALUES (13);
+sqlite> INSERT INTO foo VALUES (14);
+sqlite> INSERT INTO foo VALUES (15);
+sqlite> INSERT INTO foo VALUES (16);
+sqlite> INSERT INTO foo VALUES (17);
+sqlite> INSERT INTO foo VALUES (18);
+sqlite> SELECT * FROM foo;
+1
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+sqlite> INSERT INTO foo VALUES (132);
+sqlite> BEGIN TRANSACTION
+   ...> ;
+sqlite> DELETE FROM foo WHERE col0 < 10;
+sqlite> ROLLBACK;
+sqlite> COMMIT;
+Error: cannot commit - no transaction is active
+sqlite> BEGIN TRANSACTION;
+sqlite> DELETE FROM foo WHERE col0 < 10;
+sqlite> INSERT INTO foo VALUES (18);
+sqlite> SELECT * FROM foo;
+10
+11
+12
+13
+14
+15
+16
+17
+18
+132
+18
+sqlite> INSERT INTO foo VALUES (19);
+sqlite> END TRANSACTION;
+sqlite> SELECT * FROM foo;
+10
+11
+12
+13
+14
+15
+16
+17
+18
+132
+18
+19
+sqlite> BEGIN TRANSACTION;
+sqlite> DELETE FROM foo WHERE value > 15;
+Error: no such column: value
+sqlite> DELETE FROM foo WHERE col0 > 15;
+sqlite> DELETE FROM foo WHERE col0 = 16
+   ...> ;
+sqlite> DELETE FROM foo WHERE col0 = 15;
+sqlite> SELECT * FROM foo;
+10
+11
+12
+13
+14
+sqlite> ROLLBACK;
+sqlite> COMMIT;
+Error: cannot commit - no transaction is active
+sqlite> 
